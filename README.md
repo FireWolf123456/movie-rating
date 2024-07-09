@@ -30,15 +30,10 @@ If you are looking for running the app locally see PrerequisiteGuide.md
    ![img_4.png](img_4.png)
    ![img_5.png](img_5.png)
 
-2. `cd ../playground`
-3. your path (`pwd`) should be **{system directories}/interview-pre-req-check/playground**
-4. run `./build.sh`
-- you may need to either `chmod +x ./build.sh` to make it executable or just run the below commands as an alternative
-  ```
-    docker-compose down -v --remove-orphans
-    docker-compose rm -f -s
-    docker-compose up --always-recreate-deps --remove-orphans --renew-anon-volumes --build
-    ```
+2. `cd ../api`
+3. `go mod tidy`
+4. `go run main.go`
+
 - Postgres db will start
 - API will start at localhost:8080
     - note: you may see a "connection refused" until postgres fully stands up
