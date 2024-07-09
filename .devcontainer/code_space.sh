@@ -11,7 +11,6 @@ cd /workspaces/movie-rating/playground/
 cd /workspaces/movie-rating/frontend
 npm install --location=global react-scripts
 npm install
-npm start
 cd /workspaces/movie-rating/
 echo "Completed Setup"
 exit 0
