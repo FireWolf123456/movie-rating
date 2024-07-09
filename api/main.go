@@ -2,17 +2,18 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"log"
 	dbg "runtime/debug"
 
-	"github.com/gorilla/handlers"
-	"github.com/rs/cors"
+	"github.com/gorilla/mux"
+
 	"movie-rating-api/db"
 	movieHttp "movie-rating-api/http"
 
+	"github.com/gorilla/handlers"
+	"github.com/rs/cors"
+
 	"net/http"
-	"time"
 )
 
 var r = mux.NewRouter()
@@ -22,7 +23,6 @@ func main() {
 		if err := recover(); err != nil {
 			log.Printf("ERROR: %v\n", err)
 			dbg.PrintStack()
-			time.Sleep(10 * time.Second)
 			log.Fatalf("FATAL: %v\n", err)
 		}
 	}()
