@@ -8,6 +8,10 @@ sudo tar -C /usr/local -xzf go${GOVERSION}.linux-amd64.tar.gz
 CURRENT_DIR=`pwd`
 cd /workspaces/movie-rating/playground/
 ./build.sh
+cd /workspaces/movie-rating/frontend
+npm install --location=global react-scripts
 npm install
+npm start
+cd /workspaces/movie-rating/
 echo "Completed Setup"
 exit 0
