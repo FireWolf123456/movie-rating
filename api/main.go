@@ -28,7 +28,6 @@ func main() {
 	}()
 
 	// giving time for postgres db to start up
-	time.Sleep(5 * time.Second)
 	log.Print("******* MOVIE RATING API *******")
 
 	const port = "8080"
