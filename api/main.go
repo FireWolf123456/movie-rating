@@ -27,9 +27,7 @@ func main() {
 		}
 	}()
 
-	// giving time for postgres db to start up
 	log.Print("******* MOVIE RATING API *******")
-
 	const port = "8080"
 
 	err := db.InitializeDB()
