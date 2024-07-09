@@ -3,7 +3,7 @@
 {
 	"name": "Node.js",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -18,7 +18,10 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "./.devcontainer/code_space.sh",
 	"remoteEnv": {
-	    "PATH": "${containerEnv:PATH}:/usr/local/go/bin"
+	    "PATH": "${containerEnv:PATH}:/usr/local/go/bin",
+		"GOROOT": "/usr/local/go",
+		"GOPATH": "/go",
+		"GOTOOLCHAIN":"local"
 	},
 	
 
