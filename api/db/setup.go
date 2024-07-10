@@ -3,13 +3,14 @@ package db
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	"log"
 	"movie-rating-api/models"
 	"strings"
 	"time"
+
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 type PostgresConnection interface {
@@ -77,7 +78,7 @@ func (conn postgresConnection) ValidateConfig() error {
 
 func getPostgresConfig() PostgresConfig {
 	return PostgresConfig{
-		Host:         "postgres",
+		Host:         "localhost",
 		Port:         "5432",
 		DatabaseName: "postgres",
 		User:         "postgres",

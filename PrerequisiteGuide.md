@@ -15,7 +15,7 @@ The following are list of good ones but feel free to use whatever you would like
 
 - [Webstorm](https://www.jetbrains.com/webstorm/)
 - [GoLand](https://www.jetbrains.com/go/)
-- [Visual Studio Code](https://code.visualstudio.com)
+- [VSCode](https://code.visualstudio.com)
 
 ### 2) Install NPM
 #### Mac
@@ -36,43 +36,11 @@ The following are list of good ones but feel free to use whatever you would like
 
 2. **For Windows Machines Only:** To run docker you may need to install the linux kernel update package in step 4: https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
 
-### 4) Install go
-1. Go installation https://go.dev/doc/install
-2. Validate by typing `go version` in your terminal
+### 4) Run dev container
+- [Webstorm](https://www.jetbrains.com/help/idea/connect-to-devcontainer.html#create_dev_container_inside_ide)
+- [GoLand](https://www.jetbrains.com/help/idea/connect-to-devcontainer.html#create_dev_container_inside_ide)
+- [VSCode](https://code.visualstudio.com/docs/devcontainers/containers#_quick-start-open-an-existing-folder-in-a-container)
 
-- Note: Alternatively  you can install with homebrew with `brew install go`
-
-
-## Start the Go API and React Frontend Locally
-
-### Go API
-1. Start docker by opening the docker desktop application.
-2. From a terminal opened to this repo `cd api` and run `go mod vendor`
-3. `cd ../playground`
-4. your path (`pwd`) should be **{system directories}/interview-pre-req-check/playground**
-5. run `./build.sh`
-  - you may need to either `chmod +x ./build.sh` to make it executable or just run the below commands as an alternative
-    ```
-      docker-compose down -v --remove-orphans
-      docker-compose rm -f -s
-      docker-compose up --always-recreate-deps --remove-orphans --renew-anon-volumes --build
-      ```
-- Postgres db will start
-- API will start at localhost:8080
-  - note: you may see a "connection refused" until postgres fully stands up 
-6. Validate api started correctly by navigating to `http://localhost:8080/api/health` in a browser or run `curl http://localhost:8080/api/health` and confirming response body of **{"health":"OK"}**
-
-Troubleshooting:
-- If you encounter any issues building the application before start, try deleting the provided vendor file at /api/vendor and running `go mod tidy` and `go mod vendor`
-
-### React App
-1. Open a new terminal in the repo directory and `cd frontend`
-- your path (`pwd`) should be **{system directories}/interview-pre-req-check/frontend**
-2. `npm install --location=global react-scripts`
-3. `npm install`
-4. `npm start`
-- React app will start at localhost:3000
-- Validate react app is working properly by seeing it state in terminal it has started and validate it is talking to your api by navigating to `http://localhost:3000/health` and seeing OK in the browser console logs
-
-Troubleshooting:
-- If you encounter any issues with `npm install`, try deleting the node_module directory and package-lock.json file in /frontend and running the commands again.
+### 5) Run API and Frontend
+- [API README](./api/README.md)   
+- [Frontend README](./frontend/README.md)
